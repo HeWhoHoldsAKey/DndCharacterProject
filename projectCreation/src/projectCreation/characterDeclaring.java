@@ -4,7 +4,6 @@ import java.util.*;
 public class characterDeclaring {
 
 	public static void main(String[] args) {
-		public static void main(String[] args) {
     	int minNum = 3;
     	int maxNum = 18;
 
