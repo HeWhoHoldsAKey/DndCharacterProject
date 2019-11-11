@@ -71,29 +71,40 @@ public class characterDeclaring {
 
 	public static String getDice(String myClass) {
     	String diceDecided = "";
-    	if (myClass == "Rogue") {
+    	switch(myClass) {
+    	case "Rogue":
 			diceDecided = "d8";
-    	} else if (myClass == "Monk") {
-  			diceDecided = "d8";
-    	} else if (myClass == "Barbarian") {
+			break;
+    	case "Monk":
+			diceDecided = "d8";
+			break;
+    	case "Barbarian":
 			diceDecided = "d12";
-    	} else if (myClass == "Ranger") {
+			break;
+    	case "Ranger":
 			diceDecided = "d10";
-    	} else if (myClass == "Cleric") {
+			break;
+    	case "Cleric":
 			diceDecided = "d8";
-    	} else if (myClass == "Druid") {
+			break;
+    	case "Druid":
 			diceDecided = "d8";
-    	} else if (myClass == "Wizard") {
+			break;
+    	case "Wizard":
 			diceDecided = "d6";
-    	} else if (myClass == "Bard") {
+			break;
+    	case "Bard":
 			diceDecided = "d8";
-    	} else if (myClass == "Warlock") {
+			break;
+    	case "Warlock":
 			diceDecided = "d8";
-    	} else if (myClass == "Paladin") {
+			break;
+    	case "Paladin":
 			diceDecided = "d10";
-    	} else if (myClass == "Sorcerer") {
-			diceDecided = "d6";
-    	} else {
+			break;
+    	case "Sorcerer":
+    		diceDecided = "D6";
+    	default:
 			diceDecided = "d10";
     	}
     	return diceDecided;
