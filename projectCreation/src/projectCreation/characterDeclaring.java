@@ -22,16 +22,10 @@ public class characterDeclaring {
 		System.out.println("Hit point dice: " + myDice);
 	}
 
-
-
 	public static int getRandomNum(int min, int max) {
     	Random rand = new Random();
     	return rand.nextInt((max - min) + 1) + min;
 	}
-
-
-
-
 
 	public static String getCharacter(int a, int b, int c, int d, int e, int f) {
     	String classDecided = "";
