@@ -36,42 +36,51 @@ public class characterClass {
 
 	public String getCharacter(int dex, int con, int str, int wis, int inte, int cha) {
 		String classDecided = "";
+		
 		if (dex >= 15) {
-	    	//rogue, monk
-	    	if (inte > con) {
-	        	classDecided = "Rogue";//d8
-	    	} else {
-	        	classDecided = "Monk";//d8
-	    	}
-		} else if (str >= 15) {
-	    	//barb
-	    	classDecided = "Barbarian";//d12
-		} else if (wis >= 15) {
-	    	//druid, ranger dex, cleric con
-	    	if ((wis + dex) >= 25) {
-	        	classDecided = "Ranger";//d10
-	    	} else if ((wis + con) >= 25) {
-	        	classDecided = "Cleric";//d8
-	    	} else {
-	        	classDecided = "Druid";//d8
-	    	}
-		} else if (inte >= 15) {
-	    	//wizard
-	    	classDecided = "Wizard";//d6
-		} else if (cha >= 15) {
-	    	//bard dex, sorcerer, warlock wis, paladin con
-	    	if ((cha + dex) >= 25) {
-	        	classDecided = "Bard";//d8
-	    	} else if ((cha + wis) >= 25) {
-	        	classDecided = "Warlock";//d8
-	    	} else if ((cha + con) >= 25) {
-	        	classDecided = "Paladin";//d10
-	    	} else {
-	        	classDecided = "Sorcerer";//d6
-	    	}
-		} else {
-	    	//fighter
-	    	classDecided = "Fighter";//d10
+			
+	    		if (inte > con) {
+	       	 		classDecided = "Rogue";
+	    		} 
+			else {
+	        		classDecided = "Monk";
+	    		}
+		} 
+		else if (str >= 15) {
+	    		classDecided = "Barbarian";
+		} 
+		else if (wis >= 15) {
+			
+	    		if ((wis + dex) >= 25) {
+	        		classDecided = "Ranger";
+	    		} 
+			else if ((wis + con) >= 25) {
+	        		classDecided = "Cleric";
+	    		} 
+			else {
+	        		classDecided = "Druid";
+	    		}
+		} 
+		else if (inte >= 15) {
+	    		classDecided = "Wizard";
+		} 
+		else if (cha >= 15) {
+			
+	    		if ((cha + dex) >= 25) {
+	        		classDecided = "Bard";
+	    		} 
+			else if ((cha + wis) >= 25) {
+	        		classDecided = "Warlock";
+			} 
+			else if ((cha + con) >= 25) {
+	        		classDecided = "Paladin";
+	    		} 
+			else {
+	        		classDecided = "Sorcerer";
+	    		}
+		} 
+		else {
+	    		classDecided = "Fighter";
 		}
 		return classDecided;
 	}
