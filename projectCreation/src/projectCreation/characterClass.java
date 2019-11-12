@@ -88,41 +88,83 @@ public class characterClass {
 		String diceDecided = "";
 		
 		switch(myClass) {
-		case "Rogue":
-			diceDecided = "d8";
-			break;
-		case "Monk":
-			diceDecided = "d8";
-			break;
-		case "Barbarian":
-			diceDecided = "d12";
-			break;
-		case "Ranger":
-			diceDecided = "d10";
-			break;
-		case "Cleric":
-			diceDecided = "d8";
-			break;
-		case "Druid":
-			diceDecided = "d8";
-			break;
-		case "Wizard":
-			diceDecided = "d6";
-			break;
-		case "Bard":
-			diceDecided = "d8";
-			break;
-		case "Warlock":
-			diceDecided = "d8";
-			break;
-		case "Paladin":
-			diceDecided = "d10";
-			break;
-		case "Sorcerer":
-			diceDecided = "D6";
-		default:
-			diceDecided = "d10";
-		}
+			case "Rogue":
+				diceDecided = "d8";
+				break;
+			case "Monk":
+				diceDecided = "d8";
+				break;
+			case "Barbarian":
+				diceDecided = "d12";
+				break;
+			case "Ranger":
+				diceDecided = "d10";
+				break;
+			case "Cleric":
+				diceDecided = "d8";
+				break;
+			case "Druid":
+				diceDecided = "d8";
+				break;
+			case "Wizard":
+				diceDecided = "d6";
+				break;
+			case "Bard":
+				diceDecided = "d8";
+				break;
+			case "Warlock":
+				diceDecided = "d8";
+				break;
+			case "Paladin":
+				diceDecided = "d10";
+				break;
+			case "Sorcerer":
+				diceDecided = "D6";
+			default:
+				diceDecided = "d10";
+			}
 		return diceDecided;
 	}
-}
+	
+	public String myWeapon(String myClass){
+		String weaponDecided = "";
+		
+		switch(myClass){
+			case "Rogue":
+				//rapier, shortsword, shortbow, dual wield shortsword, daggers
+				break;
+			case "Monk":
+				//shortsword, simple weapon
+				break;
+			case "Barbarian":
+				//great axe, martial weapon, dual hand axe, simple weapon
+				break;
+			case "Ranger":
+				//dual shortsword, dual simple, longbow
+				break;
+			case "Cleric":
+				//Mace, warhammer, light crossbow, simple weapon
+				break;
+			case "Druid":
+				//dual simple, scimitar
+				break;
+			case "Wizard":
+				//quarterstaff, dagger, 
+				break;
+			case "Bard":
+				//rapier, longsword, simple, dagger
+				break;
+			case "Warlock":
+				//light crossbow, simple, dagger
+				break;
+			case "Paladin":
+				//Martial weapons, simple
+				break;
+			case "Sorcerer":
+				//light crossbow, dagger
+				break;
+			default:
+				//martial weapon, light crossbow, dual handaxe
+			}
+		}
+	}
