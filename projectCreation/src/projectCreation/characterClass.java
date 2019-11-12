@@ -1,6 +1,6 @@
 package projectCreation;
 
-import java.util.*;
+import java.util.Random;
 
 public class characterClass {
 	int minNum = 3;
