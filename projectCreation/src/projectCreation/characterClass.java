@@ -1,11 +1,12 @@
 package projectCreation;
 
-import java.util.Random;
 
+import java.util.Random;
 public class characterClass {
 	int minNum = 3;
 	int maxNum = 18;
 	
+	//Proof of concept
 	String characterName = "Dobby";
 	
 	int dex = getRandomNum(minNum, maxNum);
@@ -33,37 +34,37 @@ public class characterClass {
 		return rand.nextInt((max - min) + 1) + min;
 	}
 
-	public String getCharacter(int a, int b, int c, int d, int e, int f) {
+	public String getCharacter(int dex, int con, int str, int wis, int inte, int cha) {
 		String classDecided = "";
-		if (a >= 15) {
+		if (dex >= 15) {
 	    	//rogue, monk
-	    	if (e > b) {
+	    	if (inte > con) {
 	        	classDecided = "Rogue";//d8
 	    	} else {
 	        	classDecided = "Monk";//d8
 	    	}
-		} else if (c >= 15) {
+		} else if (str >= 15) {
 	    	//barb
 	    	classDecided = "Barbarian";//d12
-		} else if (d >= 15) {
+		} else if (wis >= 15) {
 	    	//druid, ranger dex, cleric con
-	    	if ((d + a) >= 25) {
+	    	if ((wis + dex) >= 25) {
 	        	classDecided = "Ranger";//d10
-	    	} else if ((d + b) >= 25) {
+	    	} else if ((wis + con) >= 25) {
 	        	classDecided = "Cleric";//d8
 	    	} else {
 	        	classDecided = "Druid";//d8
 	    	}
-		} else if (e >= 15) {
+		} else if (inte >= 15) {
 	    	//wizard
 	    	classDecided = "Wizard";//d6
-		} else if (f >= 15) {
+		} else if (cha >= 15) {
 	    	//bard dex, sorcerer, warlock wis, paladin con
-	    	if ((f + a) >= 25) {
+	    	if ((cha + dex) >= 25) {
 	        	classDecided = "Bard";//d8
-	    	} else if ((f + d) >= 25) {
+	    	} else if ((cha + wis) >= 25) {
 	        	classDecided = "Warlock";//d8
-	    	} else if ((f + b) >= 25) {
+	    	} else if ((cha + con) >= 25) {
 	        	classDecided = "Paladin";//d10
 	    	} else {
 	        	classDecided = "Sorcerer";//d6
