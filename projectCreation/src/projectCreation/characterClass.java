@@ -1,11 +1,13 @@
 package projectCreation;
 
-import java.util.Random;
+import java.util.*;
 
 public class characterClass {
 	int minNum = 3;
 	int maxNum = 18;
-
+	
+	String characterName = "Dobby";
+	
 	int dex = getRandomNum(minNum, maxNum);
 	int con = getRandomNum(minNum, maxNum);
 	int str = getRandomNum(minNum, maxNum);
@@ -21,13 +23,17 @@ public class characterClass {
 		System.out.println("Class: " + myClass);
 		System.out.println("Hit point dice: " + myDice);
 	}
+	
+	public String getName() {
+		return characterName;
+	}
 
-	public static int getRandomNum(int min, int max) {
+	public int getRandomNum(int min, int max) {
 		Random rand = new Random();
 		return rand.nextInt((max - min) + 1) + min;
 	}
 
-	public static String getCharacter(int a, int b, int c, int d, int e, int f) {
+	public String getCharacter(int a, int b, int c, int d, int e, int f) {
 		String classDecided = "";
 		if (a >= 15) {
 	    	//rogue, monk
@@ -68,9 +74,8 @@ public class characterClass {
 		}
 		return classDecided;
 	}
-	
-	
-	public static String getDice(String myClass) {
+
+	public String getDice(String myClass) {
 		String diceDecided = "";
 		
 		switch(myClass) {
