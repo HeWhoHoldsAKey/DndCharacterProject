@@ -131,40 +131,152 @@ public class characterClass {
 		
 		switch(myClass){
 			case "Rogue":
-				//rapier, shortsword, shortbow, dual wield shortsword, daggers
+				//rapier int, shortsword str, shortbow wis, dual wield shortsword con, daggers
+				if ((dex + inte) >= 25){
+					weaponDecided = "Rapier, 1d6";
+				}
+				else if ((dex + str) >= 25){
+					weaponDecided = "Shortsword, 1d6";
+				}
+				else if ((dex + wis) >= 25){
+					weaponDecided = "Shortbow, 1d6";
+				}
+				else if ((dex + con) >= 25){
+					weaponDecided = "Dual Wielding Shortswords, 2d6";
+				}
+				else {
+					weaponDecided = "Dual Wielding Daggers, 2d4";
+				}
 				break;
 			case "Monk":
 				//shortsword, simple weapon
+				if ((dex + inte) >= 25){
+					weaponDecided = "Shortsword, 1d6";
+				}
+				else if ((dex + wis) >= 25){
+					weaponDecided = "Unarmed, 1d4";
+				}
+				else {
+					weaponDecided = "Dual Wielding Daggers, 2d4";
+				}
 				break;
 			case "Barbarian":
 				//great axe, martial weapon, dual hand axe, simple weapon
+				if ((str + con) >= 25){
+					weaponDecided = "Great Axe, ";//1d12?
+				}
+				else if ((str + wis) >= 25){
+					weaponDecided = "Martial";
+				}
+				else if ((str + inte) >= 25){
+					weaponDecided = "Dual Wielding Hand Axes, 2d6";
+				}
+				else {
+					weaponDecided = "Simple";
+				}
 				break;
 			case "Ranger":
 				//dual shortsword, dual simple, longbow
+				if ((dex + str) >= 25){
+					weaponDecided = "Dual Wielding Shortsword, 2d6";
+				}
+				else if ((dex + wis) >= 25){
+					weaponDecided = "Dual Simple";
+				}
+				else {
+					weaponDecided = "Longbow, 1d8";
+				}
 				break;
 			case "Cleric":
 				//Mace, warhammer, light crossbow, simple weapon
+				if ((str + inte) >= 25){
+					weaponDecided = "Mace, 1d6";
+				}
+				else if ((str + con) >= 25){
+					weaponDecided = "Warhammer, 1d8";
+				}
+				else if ((str + dex) >= 25){
+					weaponDecided = "Light Crossbow, 1d8";
+				}
+				else {
+					weaponDecided = "Simple";
+				}
 				break;
 			case "Druid":
 				//dual simple, scimitar
+				if ((dex + wis) >= 25){
+					weaponDecided = "Dual Wielding Simple";
+				}
+				else {
+					weaponDecided = "Scimitar, 1d6";
+				}
 				break;
 			case "Wizard":
 				//quarterstaff, dagger, 
+				if ((dex + inte) >= 25){
+					weaponDecided = "Quarterstaff, 1d6";
+				}
+				else {
+					weaponDecided = "Dagger, 1d4";
+				}
 				break;
 			case "Bard":
 				//rapier, longsword, simple, dagger
+				if ((dex + cha) >= 25){
+					weaponDecided = "Rapier, 1d6";
+				}
+				else if ((str + cha) >= 25){
+					weaponDecided = "Longsword, 1d8";
+				}
+				else if ((wis + inte) >= 25){
+					weaponDecided = "Simple";
+				}
+				else {
+					weaponDecided = "Dagger, 1d4";
+				}
 				break;
 			case "Warlock":
 				//light crossbow, simple, dagger
+				if ((dex + inte) >= 25){
+					weaponDecided = "Light Crossbow, 1d8";
+				}
+				else if ((dex + str) >= 25){
+					weaponDecided = "Simple";
+				}
+				else {
+					weaponDecided = "Dagger, 1d4";
+				}
 				break;
 			case "Paladin":
 				//Martial weapons, simple
+				if ((cha + str) >= 25){
+					weaponDecided = "Martial";
+				}
+				else {
+					weaponDecided = "Simple";
+				}
 				break;
 			case "Sorcerer":
 				//light crossbow, dagger
+				if ((dex + inte) >= 25){
+					weaponDecided = "Light Crossbow, 1d8";
+				}
+				else {
+					weaponDecided = "Dagger, 1d4";
+				}
 				break;
 			default:
 				//martial weapon, light crossbow, dual handaxe
+				if ((dex + inte) >= 25){
+					weaponDecided = "Martial";
+				}
+				else if ((dex + str) >= 25){
+					weaponDecided = "Light Crossbow, 1d8";
+				}
+				else {
+					weaponDecided = "Dual Wielding Handaxes, 2d6";
+				}
+			return weaponDecided;
 			}
 		}
 	}
