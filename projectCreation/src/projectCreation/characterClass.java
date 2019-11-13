@@ -17,11 +17,13 @@ public class characterClass {
 
 	String myClass = getCharacter(dex, con, str, wis, inte, cha);
 	String myDice = getDice(myClass);
+	String myWeapon = getWeapon(myClass);
 	
 	public void printInfo() {
 		System.out.println("Dexterity: " + dex + "  |  Constitution: " + con + "  |  Strength: " + str + "  |  Wisdom: " + wis + "  |  Intelligence: " + inte + "  |  Charisma: " + cha);
 		System.out.println("Class: " + myClass);
 		System.out.println("Hit point dice: " + myDice);
+		Sysyem.out.println("Prefered Weapon and Damage Dice: " + myWeapon);
 	}
 	
 	public String getName() {
@@ -126,7 +128,7 @@ public class characterClass {
 		return diceDecided;
 	}
 	
-	public String myWeapon(String myClass){
+	public String getWeapon(String myClass){
 		String weaponDecided = "";
 		
 		switch(myClass){
