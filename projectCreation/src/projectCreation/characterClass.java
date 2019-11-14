@@ -7,7 +7,7 @@ public class characterClass {
 	int maxNum = 18;
 
 	// Proof of concept
-	String characterName = "Dobby";
+	String characterName;
 
 	int dex = getRandomNum(minNum, maxNum);
 	int con = getRandomNum(minNum, maxNum);
@@ -31,7 +31,7 @@ public class characterClass {
 	public String getName() {
 		return characterName;
 	}
-	
+
 	public void setName(String newName) {
 		this.characterName = newName;
 	}

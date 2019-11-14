@@ -7,6 +7,5 @@ public class motherFile {
 
 		characterObj.printInfo();
 		System.out.println("Character name is: " + characterObj.getName());
-
 	}
 }
