@@ -5,7 +5,7 @@ public class motherFile {
 		
 		characterClass characterObj = null;
 		
-		characterObj = makeCharacter.createCharacter(makeStats.getDex(), makeStats.getCon(), makeStats.getStr(), makeStats.getWis(), makeStats.getInte(), makeStats.getCon());
+		characterObj = makeCharacter.createCharacter(makeStats.getDex(), makeStats.getCon(), makeStats.getStr(), makeStats.getWis(), makeStats.getInte(), makeStats.getCha());
 		
 		characterObj.printInfo();
 	}
