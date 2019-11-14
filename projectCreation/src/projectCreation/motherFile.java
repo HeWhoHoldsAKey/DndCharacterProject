@@ -2,10 +2,11 @@ package projectCreation;
 
 public class motherFile {
 	public static void main(String[] args) {
-
-		characterClass characterObj = new characterClass();
-
+		
+		characterClass characterObj = null;
+		
+		characterObj = makeCharacter.createCharacter(makeStats.getDex(), makeStats.getCon(), makeStats.getStr(), makeStats.getWis(), makeStats.getInte(), makeStats.getCon());
+		
 		characterObj.printInfo();
-		System.out.println("Character name is: " + characterObj.getName());
 	}
 }
