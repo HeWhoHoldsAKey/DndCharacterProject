@@ -31,6 +31,10 @@ public class characterClass {
 	public String getName() {
 		return characterName;
 	}
+	
+	public void setName(String newName) {
+		this.characterName = newName;
+	}
 
 	public int getRandomNum(int min, int max) {
 		Random rand = new Random();
