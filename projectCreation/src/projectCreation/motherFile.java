@@ -3,9 +3,9 @@ package projectCreation;
 public class motherFile {
 	public static void main(String[] args) {
 		
-		characterClass characterObj = null;
+		characterMain characterObj = null;
 		
-		characterObj = makeCharacter.createCharacter(makeStats.getDex(), makeStats.getCon(), makeStats.getStr(), makeStats.getWis(), makeStats.getInte(), makeStats.getCha());
+		characterObj = setCharacterClass.createCharacterClass(makeStats.getDex(), makeStats.getCon(), makeStats.getStr(), makeStats.getWis(), makeStats.getInte(), makeStats.getCha());
 		
 		characterObj.printInfo();
 	}

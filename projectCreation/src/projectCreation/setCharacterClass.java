@@ -2,9 +2,9 @@ package projectCreation;
 
 import projectCreation.Classes.*;
 
-public class makeCharacter {
+public class setCharacterClass {
 
-	public static characterClass createCharacter(int dex, int con, int str, int wis, int inte, int cha) {
+	public static characterMain createCharacterClass(int dex, int con, int str, int wis, int inte, int cha) {
 		if (dex >= 15) {
 
 			if (inte > con) {
