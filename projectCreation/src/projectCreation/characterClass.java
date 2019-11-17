@@ -1,13 +1,13 @@
 package projectCreation;
 
 public class characterClass extends characterMain {
-	String description;
+	String classDescription;
 
-	public String getDescription() {
-		return description;
+	public String getClassDescription() {
+		return classDescription;
 	}
 
-	public void setDescription(String val) {
-		this.description = val;
+	public void setClassDescription(String val) {
+		this.classDescription = val;
 	}
 }

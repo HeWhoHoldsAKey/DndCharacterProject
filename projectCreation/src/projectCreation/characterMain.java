@@ -56,7 +56,7 @@ public abstract class characterMain {
 		this.name = val;
 	}
 
-	public void setRaceASI(int val) {
+	public void setRaceAsi(int val) {
 		this.raceAsi = val;
 	}
 

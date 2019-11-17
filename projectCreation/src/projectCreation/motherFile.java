@@ -6,7 +6,6 @@ public class motherFile {
 		characterMain characterObj = null;
 		
 		characterObj = setCharacterClass.createCharacterClass(makeStats.getDex(), makeStats.getCon(), makeStats.getStr(), makeStats.getWis(), makeStats.getInte(), makeStats.getCha());
-		
 		characterObj.printInfo();
 	}
 }
