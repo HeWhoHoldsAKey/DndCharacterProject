@@ -1,9 +1,0 @@
-package projectCreation;
-
-public class Armor{
-    public static void main(String[] args){
-    myClass = "Rogue";
-    
-    System.out.println(myArmor);
-    }
-}
