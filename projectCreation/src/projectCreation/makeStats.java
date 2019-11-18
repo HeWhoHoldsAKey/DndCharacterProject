@@ -13,6 +13,7 @@ public class makeStats {
 	static int wis = getRandomNum(minNum, maxNum);
 	static int inte = getRandomNum(minNum, maxNum);
 	static int cha = getRandomNum(minNum, maxNum);
+	static int armorStuff = getRandomNum(1, 2);
 
 	public static int getDex() {
 		return dex;
@@ -36,6 +37,10 @@ public class makeStats {
 
 	public static int getCha() {
 		return cha;
+	}
+	
+	public static int getArmorStuff(){
+		return armorStuff;
 	}
 
 	public static int getRandomNum(int min, int max) {
