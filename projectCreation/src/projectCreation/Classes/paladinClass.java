@@ -1,22 +1,21 @@
 package projectCreation.Classes;
 
 import projectCreation.characterClass;
-import projectCreation.makeStats;
+import projectCreation.setCharacterClass;
 
 public class paladinClass extends characterClass {
 	public paladinClass() {
 
-		setName("undetermened");
 		setCharClass("Paladin");
-		setWeaponOfChoice(decideWeapon(makeStats.getDex(), makeStats.getInte(), makeStats.getStr(), makeStats.getWis(),
-				makeStats.getCha()));
+		setWeaponOfChoice(decideWeapon(setCharacterClass.getDex(), setCharacterClass.getInte(), setCharacterClass.getStr(), setCharacterClass.getWis(),
+				setCharacterClass.getCha()));
 
-		setDex(makeStats.getDex());
-		setCon(makeStats.getCon());
-		setStr(makeStats.getStr());
-		setWis(makeStats.getWis());
-		setInte(makeStats.getInte());
-		setCha(makeStats.getCha());
+		setDex(setCharacterClass.getDex());
+		setCon(setCharacterClass.getCon());
+		setStr(setCharacterClass.getStr());
+		setWis(setCharacterClass.getWis());
+		setInte(setCharacterClass.getInte());
+		setCha(setCharacterClass.getCha());
 
 		setDiceOfCharacter("D10");
 	}

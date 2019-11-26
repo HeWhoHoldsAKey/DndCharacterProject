@@ -1,24 +1,40 @@
 package projectCreation;
 
-public abstract class characterMain {
-	String charClass;
-	String name;
-	String weaponOfChoice;
-	String diceOfWeapon;
-	String diceOfCharacter;
-	String race;
-	String subRace;
-	String raceAsiType;
-	String subRaceAsiType;
+public class characterMain {
+	private String charClass;
+	private String name;
+	private String weaponOfChoice;
+	private String diceOfWeapon;
+	private String diceOfCharacter;
+	private String race;
+	private String subRace;
+	private String raceAsiType;
+	private String subRaceAsiType;
 
-	int dex;
-	int con;
-	int str;
-	int wis;
-	int inte;
-	int cha;
-	int raceAsi;
-	int SubRaceAsi;
+	private int dex;
+	private int con;
+	private int str;
+	private int wis;
+	private int inte;
+	private int cha;
+	private int raceAsi;
+	private int SubRaceAsi;
+
+	public void setClass(characterClass classType) {
+		this.dex = classType.getDex();
+		this.con = classType.getCon();
+		this.str = classType.getStr();
+		this.wis = classType.getWis();
+		this.inte = classType.getInte();
+		this.cha = classType.getCha();
+		this.charClass = classType.getCharClass();
+		this.diceOfCharacter = classType.getdiceOfCharacter();
+		this.weaponOfChoice = classType.getWeaponOfChoice();
+	}
+
+	public void setName(String val) {
+		this.name = val;
+	}
 
 	public void setRace(String val) {
 		this.race = val;
@@ -36,24 +52,8 @@ public abstract class characterMain {
 		this.subRaceAsiType = val;
 	}
 
-	public void setCharClass(String newClass) {
-		this.charClass = newClass;
-	}
-
-	public void setWeaponOfChoice(String newWeapon) {
-		this.weaponOfChoice = newWeapon;
-	}
-
 	public void setDiceOfWeapon(String newdice) {
 		this.diceOfWeapon = newdice;
-	}
-
-	public void setDiceOfCharacter(String newdice) {
-		this.diceOfCharacter = newdice;
-	}
-
-	public void setName(String val) {
-		this.name = val;
 	}
 
 	public void setRaceAsi(int val) {
@@ -64,68 +64,8 @@ public abstract class characterMain {
 		this.SubRaceAsi = val;
 	}
 
-	public void setDex(int val) {
-		this.dex = val;
-	}
-
-	public void setCon(int val) {
-		this.con = val;
-	}
-
-	public void setStr(int val) {
-		this.str = val;
-	}
-
-	public void setWis(int val) {
-		this.wis = val;
-	}
-
-	public void setInte(int val) {
-		this.inte = val;
-	}
-
-	public void setCha(int val) {
-		this.cha = val;
-	}
-
-	public int getDex() {
-		return dex;
-	}
-
-	public int getCon() {
-		return con;
-	}
-
-	public int getStr() {
-		return str;
-	}
-
-	public int getWis() {
-		return wis;
-	}
-
-	public int getInte() {
-		return inte;
-	}
-
-	public int getCha() {
-		return cha;
-	}
-
-	public String getCharClass() {
-		return charClass;
-	}
-
-	public String getWeaponOfChoice() {
-		return weaponOfChoice;
-	}
-
 	public String getdiceOfWeapon() {
 		return diceOfWeapon;
-	}
-
-	public String getdiceOfCharacter() {
-		return diceOfCharacter;
 	}
 
 	public String getName() {

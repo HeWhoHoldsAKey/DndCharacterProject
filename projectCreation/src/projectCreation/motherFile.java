@@ -1,11 +1,14 @@
 package projectCreation;
 
+
 public class motherFile {
 	public static void main(String[] args) {
 		
-		characterMain characterObj = null;
+		characterMain characterObj = new characterMain();
 		
-		characterObj = setCharacterClass.createCharacterClass(makeStats.getDex(), makeStats.getCon(), makeStats.getStr(), makeStats.getWis(), makeStats.getInte(), makeStats.getCha());
+		characterObj.setClass(setCharacterClass.createCharacterClass(setCharacterClass.getDex(), setCharacterClass.getCon(), setCharacterClass.getStr(), setCharacterClass.getWis(), setCharacterClass.getInte(), setCharacterClass.getCha()));
+		
 		characterObj.printInfo();
+		
 	}
 }
