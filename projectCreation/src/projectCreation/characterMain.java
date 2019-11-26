@@ -18,7 +18,7 @@ public class characterMain {
 	private int inte;
 	private int cha;
 	private int raceAsi;
-	private int SubRaceAsi;
+	private int subRaceAsi;
 
 	public void setClass(characterClass classType) {
 		this.dex = classType.getDex();
@@ -61,7 +61,7 @@ public class characterMain {
 	}
 
 	public void setSubRaceAsi(int val) {
-		this.SubRaceAsi = val;
+		this.subRaceAsi = val;
 	}
 
 	public String getdiceOfWeapon() {
@@ -86,6 +86,14 @@ public class characterMain {
 
 	public String getSubRaceAsiType() {
 		return subRaceAsiType;
+	}
+
+	public int getRaceAsi() {
+		return raceAsi;
+	}
+
+	public int getSubRaceAsi() {
+		return subRaceAsi;
 	}
 
 	public void printInfo() {

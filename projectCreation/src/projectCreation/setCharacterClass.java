@@ -52,27 +52,27 @@ public class setCharacterClass {
 	}
 	
 	public static int getDex() {
-		return dex;
+		return getRandomNum(minNum, maxNum);
 	}
 
 	public static int getCon() {
-		return con;
+		return getRandomNum(minNum, maxNum);
 	}
 
 	public static int getStr() {
-		return str;
+		return getRandomNum(minNum, maxNum);
 	}
 
 	public static int getWis() {
-		return wis;
+		return getRandomNum(minNum, maxNum);
 	}
 
 	public static int getInte() {
-		return inte;
+		return getRandomNum(minNum, maxNum);
 	}
 
 	public static int getCha() {
-		return cha;
+		return getRandomNum(minNum, maxNum);
 	}
 
 	public static int getRandomNum(int min, int max) {
