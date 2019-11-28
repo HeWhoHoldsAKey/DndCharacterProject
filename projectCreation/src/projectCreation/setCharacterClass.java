@@ -3,15 +3,13 @@ package projectCreation;
 import projectCreation.Classes.*;
 
 public class setCharacterClass {
-	static int minNum = 3;
-	static int maxNum = 18;
-	
-	static int dex = getRandomNum(minNum, maxNum);
-	static int con = getRandomNum(minNum, maxNum);
-	static int str = getRandomNum(minNum, maxNum);
-	static int wis = getRandomNum(minNum, maxNum);
-	static int inte = getRandomNum(minNum, maxNum);
-	static int cha = getRandomNum(minNum, maxNum);
+
+	static int dex;
+	static int con;
+	static int str;
+	static int wis;
+	static int inte;
+	static int cha;
 
 	public static characterClass createCharacterClass(int dex, int con, int str, int wis, int inte, int cha) {
 		if (dex >= 15) {
@@ -50,32 +48,53 @@ public class setCharacterClass {
 		}
 
 	}
-	
+
 	public static int getDex() {
-		return getRandomNum(minNum, maxNum);
+		return dex;
 	}
 
 	public static int getCon() {
-		return getRandomNum(minNum, maxNum);
+		return con;
 	}
 
 	public static int getStr() {
-		return getRandomNum(minNum, maxNum);
+		return str;
 	}
 
 	public static int getWis() {
-		return getRandomNum(minNum, maxNum);
+		return wis;
 	}
 
 	public static int getInte() {
-		return getRandomNum(minNum, maxNum);
+		return inte;
 	}
 
 	public static int getCha() {
-		return getRandomNum(minNum, maxNum);
+		return cha;
 	}
 
-	public static int getRandomNum(int min, int max) {
-		return (int) ((Math.random() * ((max - min) + 1)) + min);
+	public static void setDex(int newVal) {
+		dex = newVal;
 	}
+
+	public static void setCon(int newVal) {
+		con = newVal;
+	}
+
+	public static void setStr(int newVal) {
+		str = newVal;
+	}
+
+	public static void setWis(int newVal) {
+		wis = newVal;
+	}
+
+	public static void setInte(int newVal) {
+		inte = newVal;
+	}
+
+	public static void setCha(int newVal) {
+		cha = newVal;
+	}
+
 }
