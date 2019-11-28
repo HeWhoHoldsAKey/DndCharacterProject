@@ -1,6 +1,7 @@
 package projectCreation;
 
 import java.util.Scanner;
+import projectCreation.Races.*;
 
 public class motherFile {
 	public static void main(String[] args) {
@@ -15,14 +16,13 @@ public class motherFile {
 		System.out.println("1. Random");
 		System.out.println("2. Build it yourself");
 		System.out.print(" >> ");
-		int ans = input.nextInt();
+		int num = input.nextInt();
 
-		if (checkIfValid(ans, 1, 2) == false) {
+		if (checkIfValid(num, 1, 2) == false) {
 			failureA();
 		}
-
-		if (ans == 1) {
-			makeBarrier();
+		makeBarrier();
+		if (num == 1) {
 
 			setCharacterClass.setDex(getRandomNum(minNum, maxNum));
 
@@ -41,12 +41,11 @@ public class motherFile {
 					setCharacterClass.getInte(), setCharacterClass.getCha()));
 			characterObj.printInfo();
 		} else {
-			makeBarrier();
 
 			System.out.println("Inter numbers from 3 to 18.");
 			System.out.print("Dex >> ");
 
-			int num = input.nextInt();
+			num = input.nextInt();
 			if (checkIfValid(num, minNum, maxNum) == true) {
 				setCharacterClass.setDex(num);
 			} else {
@@ -110,6 +109,69 @@ public class motherFile {
 			characterObj.printInfo();
 
 		}
+
+		makeBarrier();
+		System.out.println("Would you like a random race or would you like to choose your own?");
+		System.out.println("1. Random(Broken)");
+		System.out.println("2. Choose");
+		System.out.print(" >> ");
+		num = input.nextInt();
+
+		if (checkIfValid(num, 1, 2) == false) {
+			failureA();
+		}
+		makeBarrier();
+		if (num == 1) {
+
+		} else {
+			System.out.println("Choose a race:");
+			System.out.println("1. Dwarf");
+			System.out.println("2. Elf");
+			System.out.println("3. Halfling");
+			System.out.println("4. Human");
+			System.out.println("5. Dragonborn");
+			System.out.println("6. Gnome");
+			System.out.println("7. Half-Elf");
+			System.out.println("8. Half-Orc");
+			System.out.println("9. Tieflring");
+			System.out.print(" >> ");
+			num = input.nextInt();
+
+			switch (num) {
+			case 1:
+				characterObj.setRace(new dwarfRace());
+				break;
+			case 2:
+				characterObj.setRace(new elfRace());
+				break;
+			case 3:
+				characterObj.setRace(new halflingRace());
+				break;
+			case 4:
+				characterObj.setRace(new humanRace());
+				break;
+			case 5:
+				characterObj.setRace(new dragonbornRace());
+				break;
+			case 6:
+				characterObj.setRace(new gnomeRace());
+				break;
+			case 7:
+				characterObj.setRace(new halfElfRace());
+				break;
+			case 8:
+				characterObj.setRace(new halfOrcRace());
+				break;
+			case 9:
+				characterObj.setRace(new tieflringRace());
+				break;
+			default:
+				System.out.println("That was an incorrect input your death will commence in 5... 4... 3...");
+			}
+			makeBarrier();
+			characterObj.printInfoWithRace();
+		}
+
 		input.close();
 	}
 
