@@ -6,10 +6,6 @@ public class characterMain {
 	private String weaponOfChoice;
 	private String diceOfWeapon;
 	private String diceOfCharacter;
-	private String race;
-	private String subRace;
-	private String raceAsiType;
-	private String subRaceAsiType;
 
 	private int dex;
 	private int con;
@@ -17,8 +13,6 @@ public class characterMain {
 	private int wis;
 	private int inte;
 	private int cha;
-	private int raceAsi;
-	private int subRaceAsi;
 
 	public void setClass(characterClass classType) {
 		this.dex = classType.getDex();
@@ -31,37 +25,25 @@ public class characterMain {
 		this.diceOfCharacter = classType.getdiceOfCharacter();
 		this.weaponOfChoice = classType.getWeaponOfChoice();
 	}
+	
+	public void clearAll() {
+		this.dex = 0;
+		this.con = 0;
+		this.str = 0;
+		this.wis = 0;
+		this.inte = 0;
+		this.cha = 0;
+		this.charClass = null;
+		this.diceOfCharacter = null;
+		this.weaponOfChoice = null;
+	}
 
 	public void setName(String val) {
 		this.name = val;
 	}
 
-	public void setRace(String val) {
-		this.race = val;
-	}
-
-	public void setSubRace(String val) {
-		this.subRace = val;
-	}
-
-	public void setRaceAsiType(String val) {
-		this.raceAsiType = val;
-	}
-
-	public void setSubRaceAsiType(String val) {
-		this.subRaceAsiType = val;
-	}
-
 	public void setDiceOfWeapon(String newdice) {
 		this.diceOfWeapon = newdice;
-	}
-
-	public void setRaceAsi(int val) {
-		this.raceAsi = val;
-	}
-
-	public void setSubRaceAsi(int val) {
-		this.subRaceAsi = val;
 	}
 
 	public String getdiceOfWeapon() {
@@ -70,30 +52,6 @@ public class characterMain {
 
 	public String getName() {
 		return name;
-	}
-
-	public String getRace() {
-		return race;
-	}
-
-	public String getSubRace() {
-		return subRace;
-	}
-
-	public String getRaceAsiType() {
-		return raceAsiType;
-	}
-
-	public String getSubRaceAsiType() {
-		return subRaceAsiType;
-	}
-
-	public int getRaceAsi() {
-		return raceAsi;
-	}
-
-	public int getSubRaceAsi() {
-		return subRaceAsi;
 	}
 
 	public void printInfo() {
