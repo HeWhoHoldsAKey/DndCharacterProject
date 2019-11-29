@@ -112,7 +112,7 @@ public class motherFile {
 
 		makeBarrier();
 		System.out.println("Would you like a random race or would you like to choose your own?");
-		System.out.println("1. Random(Broken)");
+		System.out.println("1. Random");
 		System.out.println("2. Choose");
 		System.out.print(" >> ");
 		num = input.nextInt();
@@ -122,7 +122,36 @@ public class motherFile {
 		}
 		makeBarrier();
 		if (num == 1) {
-
+			num = getRandomNum(1, 9);
+			switch (num) {
+			case 1:
+				characterObj.setRace(new dwarfRace());
+				break;
+			case 2:
+				characterObj.setRace(new elfRace());
+				break;
+			case 3:
+				characterObj.setRace(new halflingRace());
+				break;
+			case 4:
+				characterObj.setRace(new humanRace());
+				break;
+			case 5:
+				characterObj.setRace(new dragonbornRace());
+				break;
+			case 6:
+				characterObj.setRace(new gnomeRace());
+				break;
+			case 7:
+				characterObj.setRace(new halfElfRace());
+				break;
+			case 8:
+				characterObj.setRace(new halfOrcRace());
+				break;
+			case 9:
+				characterObj.setRace(new tieflringRace());
+				break;
+			}
 		} else {
 			System.out.println("Choose a race:");
 			System.out.println("1. Dwarf");
@@ -168,19 +197,26 @@ public class motherFile {
 			default:
 				System.out.println("That was an incorrect input your death will commence in 5... 4... 3...");
 			}
-			makeBarrier();
-			characterObj.printInfoWithRace();
+
 		}
+		makeBarrier();
+		characterObj.printInfoWithRace();
+		makeBarrier();
+		
+		characterObj.setSubRace();
+		makeBarrier();
+		characterObj.printInfoWithSubRace();
+		makeBarrier();
 
 		input.close();
 	}
 
-	public static void makeBarrier() {
+	private static void makeBarrier() {
 		System.out.println(
 				"----------------------------------------------------------------------------------------------------------------------------");
 	}
 
-	public static boolean checkIfValid(int num, int minNum, int maxNum) {
+	private static boolean checkIfValid(int num, int minNum, int maxNum) {
 
 		if ((num >= minNum) && (num <= maxNum)) {
 			return true;
@@ -190,17 +226,17 @@ public class motherFile {
 
 	}
 
-	public static void failureA() {
+	private static void failureA() {
 		System.out.println("Please enter 1 or 2 next time.");
 		System.exit(0);
 	}
 
-	public static void failureB() {
+	private static void failureB() {
 		System.out.println("Your number wasnt in the 3-18 min/max paramaters.");
 		System.exit(0);
 	}
 
-	public static int getRandomNum(int min, int max) {
+	private static int getRandomNum(int min, int max) {
 		return (int) ((Math.random() * ((max - min) + 1)) + min);
 	}
 }

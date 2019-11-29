@@ -2,6 +2,8 @@ package projectCreation;
 
 import java.util.Scanner;
 
+import projectCreation.SubRaces.*;
+
 public class characterMain {
 	private String charClass;
 	private String name;
@@ -9,6 +11,7 @@ public class characterMain {
 	private String diceOfWeapon;
 	private String diceOfCharacter;
 	private String race;
+	private String subRace;
 
 	private int dex;
 	private int con;
@@ -100,9 +103,9 @@ public class characterMain {
 				System.out.println("6.Cha");
 				System.out.print(" >> ");
 
-				int ans = input.nextInt();
-				if ((ans >= 1) && (ans <= 6)) {
-					switch (ans) {
+				int num = input.nextInt();
+				if (checkIfValid(num, 1, 6)) {
+					switch (num) {
 					case 1:
 						this.con = this.con + 1;
 						break;
@@ -134,6 +137,120 @@ public class characterMain {
 		}
 	}
 
+	public void setSubRace() {
+		Scanner input = new Scanner(System.in);
+		characterRace subRaceType = new characterRace();
+		System.out.println("Choose a SubRace");
+		int num;
+		switch (this.race) {
+		case "Dwarf":
+			System.out.println("1. Hill Dwarf");
+			System.out.println("2. Mountain Dwarf");
+			System.out.print(" >> ");
+
+			num = input.nextInt();
+			if (checkIfValid(num, 1, 2) == false) {
+				failureA();
+			}
+
+			if (num == 1) {
+				subRaceType = new hilldwarfSubRace();
+			} else {
+				subRaceType = new mountaindwarfSubRace();
+			}
+			break;
+		case "Elf":
+			System.out.println("1. High Elf");
+			System.out.println("2. Wood Elf");
+			System.out.println("3. Dark Elf");
+			System.out.print(" >> ");
+
+			num = input.nextInt();
+			if (checkIfValid(num, 1, 3) == false) {
+				failureA();
+			}
+
+			if (num == 1) {
+				subRaceType = new highelfSubRace();
+			} else if (num == 2) {
+				subRaceType = new woodelfSubRace();
+			} else {
+				subRaceType = new darkelfSubRace();
+			}
+			break;
+		case "Halfling":
+			System.out.println("1. Light foot");
+			System.out.println("2. Stout");
+			System.out.print(" >> ");
+
+			num = input.nextInt();
+			if (checkIfValid(num, 1, 2) == false) {
+				failureA();
+			}
+
+			if (num == 1) {
+				subRaceType = new lightfootSubRace();
+			} else {
+				subRaceType = new stoutSubRace();
+			}
+			break;
+		case "Gnome":
+			System.out.println("1. Forest Gnome");
+			System.out.println("2. Rock Gnome");
+			System.out.print(" >> ");
+
+			num = input.nextInt();
+			if (checkIfValid(num, 1, 2) == false) {
+				failureA();
+			}
+
+			if (num == 1) {
+				subRaceType = new forestgnomeSubRace();
+			} else {
+				subRaceType = new rockgnomeSubRace();
+			}
+			break;
+		}
+
+		input.close();
+		this.subRace = subRaceType.getSubRace();
+		switch (subRaceType.getSubRaceAsiType()) {
+		case "Con":
+			this.con = this.con + subRaceType.getSubRaceAsi();
+			break;
+		case "Dex":
+			this.dex = this.dex + subRaceType.getSubRaceAsi();
+			break;
+		case "Str":
+			this.str = this.str + subRaceType.getSubRaceAsi();
+			break;
+		case "Wis":
+			this.wis = this.wis + subRaceType.getSubRaceAsi();
+			break;
+		case "Inte":
+			this.inte = this.inte + subRaceType.getSubRaceAsi();
+			break;
+		case "Cha":
+			this.cha = this.cha + subRaceType.getSubRaceAsi();
+			break;
+		}
+	}
+
+	private static boolean checkIfValid(int num, int minNum, int maxNum) {
+
+		if ((num >= minNum) && (num <= maxNum)) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+
+	public void failureA() {
+		System.out.println("Please enter a correct number next time.");
+		System.exit(0);
+	}
+
 	public void setName(String val) {
 		this.name = val;
 	}
@@ -159,7 +276,6 @@ public class characterMain {
 				+ wis + "  |  Intelligence: " + inte + "  |  Charisma: " + cha);
 		System.out.println("Class: " + charClass + "  |  Hit point dice: " + diceOfCharacter + "  |  Prefered Weapon: "
 				+ weaponOfChoice);
-
 	}
 
 	public void printInfoWithRace() {
@@ -167,6 +283,12 @@ public class characterMain {
 				+ wis + "  |  Intelligence: " + inte + "  |  Charisma: " + cha);
 		System.out.println("Class: " + charClass + "  |  Race:  " + race + "  |  Hit point dice: " + diceOfCharacter
 				+ "  |  Prefered Weapon: " + weaponOfChoice);
+	}
 
+	public void printInfoWithSubRace() {
+		System.out.println("Dexterity: " + dex + "  |  Constitution: " + con + "  |  Strength: " + str + "  |  Wisdom: "
+				+ wis + "  |  Intelligence: " + inte + "  |  Charisma: " + cha);
+		System.out.println("Class: " + charClass + "  |  Race:  " + race + "  |  SubRace:  " + subRace
+				+ "  |  Hit point dice: " + diceOfCharacter + "  |  Prefered Weapon: " + weaponOfChoice);
 	}
 }
