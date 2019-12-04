@@ -210,6 +210,12 @@ public class characterMain {
 				subRaceType = new rockgnomeSubRace();
 			}
 			break;
+		default:
+			subRaceType.setSubRace("None");
+			subRaceType.setSubRaceAsiType("None");
+			subRaceType.setSubRaceAsi(0);
+			break;
+			
 		}
 
 		input.close();
@@ -232,6 +238,8 @@ public class characterMain {
 			break;
 		case "Cha":
 			this.cha = this.cha + subRaceType.getSubRaceAsi();
+			break;
+		case "None":
 			break;
 		}
 	}
